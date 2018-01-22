@@ -1,0 +1,43 @@
+<h1>LabOne#lab-one</h1>
+<h2>1</h2>
+<table>
+  <thead>
+    <tr>
+      <th>String</th>
+      <th>Integer</th>
+      <th>Float</th>
+      <th>const</th>
+      <th>octadecimal</th>
+      <th>hexadecimal</th>
+    </tr>
+  </thead>
+  <tr>
+    <td> <%= "text" %> </td>
+    <td><%= 100 %></td>
+    <td><%= 3.14 %></td>
+    <td><%= true %></td>
+    <td><%= 100.to_s(8) %></td>
+    <td><%= 100.to_s(16) %></td>
+    
+  </tr>
+</table>
+
+<h2>2</h2>
+
+<%= @howManyWorks %>
+
+<h2>3</h2>
+<div class="container">
+<table class="table">
+  <h3>Таблица умножения</h3>
+  <% @multiplicationTable.each do |row| %>
+    <tr>
+      <% row.each do |col| %>
+        <td>
+          <%= col %>
+        </td>
+      <%end%>
+    </tr>
+  <% end %>
+</table>
+</div>
