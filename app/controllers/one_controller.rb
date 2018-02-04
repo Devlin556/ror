@@ -1,6 +1,6 @@
-class SomeController < ApplicationController
+class OneController < ApplicationController
   
-  def some
+  def one
     age = 20
     
     @howManyWorks = if age >= 18 and age <= 59

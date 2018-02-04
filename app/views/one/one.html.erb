@@ -1,6 +1,6 @@
 <h1>LabOne#lab-one</h1>
 <h2>1</h2>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>String</th>
@@ -18,7 +18,6 @@
     <td><%= true %></td>
     <td><%= 100.to_s(8) %></td>
     <td><%= 100.to_s(16) %></td>
-    
   </tr>
 </table>
 
@@ -28,12 +27,12 @@
 
 <h2>3</h2>
 <div class="container">
-<table class="table">
-  <h3>Таблица умножения</h3>
+<table class="multTable table table-striped">
+  <h3>multiplicationTable</h3>
   <% @multiplicationTable.each do |row| %>
-    <tr>
+    <tr class="row" >
       <% row.each do |col| %>
-        <td>
+        <td >
           <%= col %>
         </td>
       <%end%>
