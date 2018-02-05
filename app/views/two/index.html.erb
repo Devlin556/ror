@@ -43,10 +43,31 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <h2>Два</h2>
+        <p>Исходный массив</p>
+        <p>
+          <% @users.each do |user| %>
+            <code><%= user[:lastName] =%> <%= user[:role] =%></code>
+          <% end %>
+        </p>
+        <p>Сортировка. Сначала одмены, потом юзеры</p>
+        <p>
+          <% @users.sort_by { |user| user[:role] }.each do |user| %>
+            <code><%=  user[:lastName ] =%></code>
+          <% end %>
+        </p>
+        
+        <p>Разбиение массива</p>
+        <p>
+          <% @admins.each do |admin| %>
+            <code><%= admin[:lastName] =%> <%= admin[:role] =%></code>
+          <% end %>
+        </p>
+        <p>
+          <% @notadmins.each do |notadmin| %>
+            <code><%= notadmin[:lastName] =%> <%= notadmin[:role] =%></code>
+          <% end %>
+        </p>
 
-        <% @users.each_with_index do |user| %>
-          <%= user.key('role') =%>
-        <% end %>
 
       </div>
     </div>
