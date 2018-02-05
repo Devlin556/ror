@@ -44,6 +44,10 @@
       <div class="panel-body">
         <h2>Два</h2>
 
+        <% @users.each_with_index do |user| %>
+          <%= user.key('role') =%>
+        <% end %>
+
       </div>
     </div>
   </div>
