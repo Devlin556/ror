@@ -13,5 +13,10 @@ class TwoController < ApplicationController
     @admins = @users.select { |user| user[:role] == 'admin' }
     @notadmins = @users.select { |user| user[:role] == 'user' }
 
+    @countries = [
+      {'Россия' => ['Ростов-на-Дону', 'Москва', 'Санкт-Петербург', 'Томск']},
+      {'Германия' => ['Берлин', 'Мюнхен', 'Гамбург', 'Дрезден']}
+    ]
+
   end
 end
