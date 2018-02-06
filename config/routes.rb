@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'three/index'
+
   get 'two/index'
 
   get 'one/one'
