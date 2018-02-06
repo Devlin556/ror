@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'two/index'
 
-  get 'one/one'
+  get 'one/index'
 
   get 'test/test'
   root 'test#test'

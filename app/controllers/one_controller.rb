@@ -1,6 +1,6 @@
 class OneController < ApplicationController
-  
-  def one
+  def index
+
     age = 20
     
     @howManyWorks = if age >= 18 and age <= 59
@@ -12,6 +12,7 @@ class OneController < ApplicationController
     else 
       "Неизвестный возраст"  
     end
+
     @multiplicationTable = [];
     for i in 1..9
       @multiplicationTable[i-1] = [];
@@ -19,8 +20,10 @@ class OneController < ApplicationController
         @multiplicationTable[i-1][j-1] = j * i
       end
     end
+    
     @multiplicationTable.each do |i|
       puts i
     end
   end
+
 end
