@@ -19,5 +19,12 @@ class TwoController < ApplicationController
       {'Италия' => ['Рим', 'Неаполь', 'Венеция', 'Флоренция']}
     ]
 
+    @employees = [
+        {firstName: 'Александр', lastName: 'Новиков', age: 35, address: 'ул. Ленина 99', phone: '125-89-63', money: 5000},
+        {firstName: 'Александр', lastName: 'Бодров', age: 28, address: 'пр. Ворошиловский 61', phone: '256-89-63', money: 5500},
+        {firstName: 'Николай', lastName: 'Хмельницкий', age: 28, address: 'ул. Социалистическая 25', phone: '100-89-63', money: 10000},
+        {firstName: 'Олег', lastName: 'Нестеров', age: 44, address: 'ул. Петровка 11', phone: '330-89-63', money: 4998},
+    ]
+
   end
 end
