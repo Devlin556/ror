@@ -3,11 +3,11 @@
     <div class="col-xl-12 bg-info">
       <div class="three" >
 
-        <h1>Three#index <span class="label label-warning">В процессе</span></h1>
+        <h1>Three#index <span class="label label-success">Готово</span></h1>
         <p>Find me in app/views/three/index.html.erb</p>
 
         <div class="well well-sm">
-          <b>1</b>
+          <h4>1</h4>
           <%= (@password.length < 5 || @password[/[\/\@\$]+/] != nil) ? 'не верный пароль' : 'верный пароль'  %>
         </div>
 
@@ -41,7 +41,7 @@
           <b>hash</b>
           <%= @password.hash %>
         </div>
-        
+
         <div class="well well-sm">
           <b>md5 string</b>
           <%= @md5Pass %>

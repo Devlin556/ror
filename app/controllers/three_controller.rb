@@ -1,5 +1,6 @@
 class ThreeController < ApplicationController
   def index
+    require 'digest/md5';
 
     @password = 'pas';
 
@@ -11,21 +12,18 @@ class ThreeController < ApplicationController
 
     @five = 'C Днем Рождения';
 
-    @six = 'html, <b>php</b>, js'
+    @six = 'html, <b>php</b>, js';
 
-    len = Random.new.rand(25)   
+    len = Random.new.rand(25);
 
     alphabet = ('a'..'z').to_a;
     @password = '';
 
     (1 .. Random.new.rand(25) ).map {
-      @password += alphabet[Random.new.rand(26)]
+      @password += alphabet[Random.new.rand(26)];
     } 
     
-    require 'digest/md5';
-    @md5Pass = Digest::MD5.hexdigest(@password)
+    @md5Pass = Digest::MD5.hexdigest(@password);
 
-      # @password =+ alphabet[Randow.new.rand(26)]
-    # end 
   end
 end
