@@ -6,13 +6,46 @@
         <h1>Three#index <span class="label label-warning">В процессе</span></h1>
         <p>Find me in app/views/three/index.html.erb</p>
 
-        <div class="well well-sm"> 1 задание</div>
-        <div class="well well-sm"> 2 задание</div>
-        <div class="well well-sm"> 3 задание</div>
-        <div class="well well-sm"> 4 задание</div>
-        <div class="well well-sm"> 5 задание</div>
-        <div class="well well-sm"> 6 задание</div>
-        <div class="well well-sm"> 7 задание</div>
+        <div class="well well-sm">
+          <b>1</b>
+          <%= (@password.length < 5 || @password[/[\/\@\$]+/] != nil) ? 'не верный пароль' : 'верный пароль'  %>
+        </div>
+
+        <div class="well well-sm">
+          <b>2</b>
+          <%= @path.split('\\').pop.slice(0, @path.split('\\').pop.index('.')) %>
+        </div>
+        <div class="well well-sm">
+          <b>3</b>
+          <%= @stringWithWhitespace %>
+        </div>
+        <div class="well well-sm">
+          <b>4</b>
+          <%= @smiles.gsub(/\:\(/, '😢').gsub(/;\(\(/, '😭') %></div>
+        <div class="well well-sm">
+          <%= @five.split(' ') %>
+        </div>
+
+        <div class="well well-sm">
+          <b>6</b>
+          <%= @six %>
+        </div>
+
+        <h3>седьмое</h3>
+        <div class="well well-sm">
+          <b>исходная строка</b>
+          <%= @password %>
+        </div>
+
+        <div class="well well-sm">
+          <b>hash</b>
+          <%= @password.hash %>
+        </div>
+        
+        <div class="well well-sm">
+          <b>md5 string</b>
+          <%= @md5Pass %>
+        </div>
 
       </div>
 
