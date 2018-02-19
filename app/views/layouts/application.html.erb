@@ -27,39 +27,26 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <% if (request.fullpath == '/one/index') %>
+
                   <% root_path %>
-                    <li class='active' >
+                <li class=<%=(request.fullpath == '/one/index') ? "active" : "" %> >
                       <%= link_to 'One', one_index_url %>
                     </li> 
-                  <% else %>
-                    <li >
-                      <%= link_to 'One', one_index_url %>
-                    </li> 
-                <% end %>
 
-                <% if (request.fullpath == '/two/index') %>
+
                   <% root_path %>
-                    <li class='active' >
-                      <%= link_to 'Two', two_index_url %>
-                    </li> 
-                  <% else %>
-                    <li >
-                      <%= link_to 'Two', two_index_url %>
-                    </li> 
-                <% end %>
+                <li class=<%=(request.fullpath == '/two/index') ? "active" : "" %> >
+                  <%= link_to 'Two', two_index_url %>
+                </li>
 
-                <% if (request.fullpath == '/three/index') %>
-                  <% root_path %>
-                    <li class='active' >
-                      <%= link_to 'Three', three_index_url %>
-                    </li> 
-                  <% else %>
-                    <li >
-                      <%= link_to 'Three', three_index_url %>
-                    </li> 
-                <% end %>
-
+                <% root_path %>
+                  <li class=<%=(request.fullpath == '/three/index') ? "active" : "" %> >
+                    <%= link_to 'Three', three_index_url %>
+                  </li>
+                <% root_path %>
+                <li class=<%=(request.fullpath == '/four/index') ? "active" : "" %> >
+                  <%= link_to 'Four', three_index_url %>
+                </li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
