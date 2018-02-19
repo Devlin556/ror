@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'four/index'
+  
   get 'three/index'
   get 'four/index'
   get 'two/index'
+  
   get 'one/index'
   get 'test/test'
   root 'test#test'
