@@ -38,8 +38,25 @@ class FourController < ApplicationController
     html_table.gsub!(/<body>/, table_body)
     return html_table.html_safe
   end
-  def index
 
+  def getMenu(menu)
+    nav = "<nav class='navbar navbar-default '><div class='container'><div class='navbar'><ul class='nav navbar-nav'><links></ul></div></nav>"
+    links = ''
+    menu.each { |navItem|
+      links += "<li><a href='#{navItem[:link]}'>#{navItem[:label]}</a></li>"
+    }
+    print(links)
+    nav.gsub!(/<links>/, links)
+    return nav.html_safe
   end
-  helper_method :sum, :eval, :getTable
+
+  def index
+    @menu = [
+        { label:  'One', link: '/one/index' },
+         { label:  'Two', link: '/two/index' },
+         { label:  'Three', link: '/three/index' },
+         { label:  'Four', link: '/four/index' },
+    ]
+  end
+  helper_method :sum, :eval, :getTable, :getMenu
 end
