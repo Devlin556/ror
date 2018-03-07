@@ -17,7 +17,7 @@ class FourController < ApplicationController
   end
 
   def getTable(cols, rows, color)
-    html_table = '<table class="table table-stripped table-bordered"><head><body></table>'
+    html_table = '<table class="table multiTable table-stripped table-bordered"><head><body></table>'
     table_head = '<tr><row></tr>'
     table_body = ''
     header_row = ''
