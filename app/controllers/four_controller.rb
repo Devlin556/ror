@@ -45,7 +45,7 @@ class FourController < ApplicationController
     menu.each { |navItem|
       links += "<li><a href='#{navItem[:link]}'>#{navItem[:label]}</a></li>"
     }
-    print(links)
+    # print(links)
     nav.gsub!(/<links>/, links)
     return nav.html_safe
   end
