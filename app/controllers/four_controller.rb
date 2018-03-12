@@ -39,23 +39,33 @@ class FourController < ApplicationController
     return html_table.html_safe
   end
 
-  def getMenu(menu)
-    nav = "<nav class='navbar navbar-default '><div class='container'><div class='navbar'><ul class='nav navbar-nav'><links></ul></div></nav>"
-    links = ''
-    menu.each { |navItem|
-      links += "<li><a href='#{navItem[:link]}'>#{navItem[:label]}</a></li>"
-    }
-    # print(links)
-    nav.gsub!(/<links>/, links)
-    return nav.html_safe
+  def getMenu(menu, type = 'horizontal')
+    case type 
+      when 'horizontal'
+        nav = "<nav class='navbar navbar-default '><div class='container'><div class='navbar'><ul class='nav navbar-nav'><links></ul></div></nav>"
+        links = ''
+        menu.each { |navItem|
+          links += "<li><a href='#{navItem[:link]}'>#{navItem[:label]}</a></li>"
+        }
+        nav.gsub!(/<links>/, links)
+      return nav.html_safe
+
+      when 'vertical'
+        links = ''
+        menu.each { |navItem|
+          links += "<li><a href='#{navItem[:link]}'>#{navItem[:label]}</a></li>"
+        }
+      return links.html_safe
+      
+      end
   end
 
   def index
     @menu = [
         { label:  'One', link: '/one/index' },
-         { label:  'Two', link: '/two/index' },
-         { label:  'Three', link: '/three/index' },
-         { label:  'Four', link: '/four/index' },
+        { label:  'Two', link: '/two/index' },
+        { label:  'Three', link: '/three/index' },
+        { label:  'Four', link: '/four/index' },
     ]
   end
   helper_method :sum, :eval, :getTable, :getMenu
