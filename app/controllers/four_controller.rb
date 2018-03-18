@@ -23,15 +23,23 @@ class FourController < ApplicationController
     header_row = ''
     body_row = "<tr style='background: #{color}'><td></tr>"
     body_data = ''
-    (1..cols).each { |col|
-      header_row += "<th>#{col.to_s()}</th>"
-      (1..rows ).each{ |row|
+    (1..rows).each { |row|
+      (1..cols ).each{ |col|
+        col == 1 ? body_data += "<td>#{(col * row).to_s()}</td>" : ''
+        
         body_data += "<td>#{(col * row).to_s()}</td>"
       }
       body_row.gsub!(/<td>/, body_data)
       body_data = ''
       table_body += body_row
       body_row = "<tr style='background: #{color}'><td></tr>"
+    }
+
+    ( 1..cols ).each { |col| 
+      if col == 1
+        header_row += "<th> </th>" 
+      end
+      header_row += "<th>#{ col.to_s()}</th>"
     }
     table_head.gsub!(/<row>/, header_row)
     html_table.gsub!(/<head>/, table_head)
@@ -69,4 +77,40 @@ class FourController < ApplicationController
     ]
   end
   helper_method :sum, :eval, :getTable, :getMenu
+end
+
+
+# функция генерации списка 
+# массив эл-ов, вид списка 
+
+
+def listRenderer(arr, type = 'unordered')
+  
+  list = '<type><items></type>'
+
+  case type 
+    when 'unordered'
+      items = ''
+      arr.each { |i|
+        items += "<li><a href='#{i[:link]}'>#{i[:label]}</a></li>"
+      }
+      
+      list.gsub!(/<items>/,items )
+      list.gsub!(/<type>/, '<ul>' )
+      list.gsub!(/<\/type>/, '</ul>' )
+
+    return list.html_safe
+
+  when 'ordered'
+    items = ''
+    arr.each { |i|
+      items += "<li><a href='#{i[:link]}'>#{i[:label]}</a></li>"
+    }
+
+    list.gsub!(/<items>/,items )
+    list.gsub!(/<type>/, '<ol>' )
+    list.gsub!(/<\/type>/, '</ol>' )
+
+  return list.html_safe
+    end
 end
