@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   
   get 'one/index'
   get 'test/test'
-  root 'test#test'
+  root 'five#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  post 'five/index/search' => 'five/index#perform'
+  post 'five/search' => 'five#perform'
 
 end

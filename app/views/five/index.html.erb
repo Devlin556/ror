@@ -7,24 +7,38 @@
 
       <div class="well well-sm">
         <h2>1</h2>
-        <%= form_tag five_index_search_path do %>
-          <%= label_tag(:text, "Input element:") %>
-          <%= text_field_tag(:text) %>
-            <%= submit_tag("Search") %>
-
-<!-- 
-          <%= text_area_tag(:more_text, 'Textarea field',  size: "24x6") %>
-
-          <%= check_box_tag(:pet_dog) %>
-          <%= label_tag(:pet_dog, "I own a dog") %>
-          <%= check_box_tag(:pet_cat) %>
-          <%= label_tag(:pet_cat, "I own a cat") %>
-
-          <%= radio_button_tag(:age, "child") %>
-          <%= label_tag(:age_child, "I am younger than 21") %>
-          <%= radio_button_tag(:age, "adult") %>
-          <%= label_tag(:age_adult, "I'm over 21") %> -->
-        <% end %>
+        <div class="row">
+          <div class="col-md-6">
+              <%= form_tag five_search_path do %>
+              <p>
+                <%= text_field_tag(:input_element, 'Input element') %>
+              </p>
+    
+              <p>
+                <%= text_area_tag(:textarea_element, 'Textarea field',  size: "24x6") %>
+              </p>
+    
+              <p>
+                <%= check_box_tag(:pet_dog) %>
+                <%= label_tag(:pet_dog, "I own a dog") %>
+                <%= check_box_tag(:pet_cat) %>
+                <%= label_tag(:pet_cat, "I own a cat") %>
+              </p>
+    
+              <p>
+                <%= radio_button_tag(:age, "child") %>
+                <%= label_tag(:age_child, "I am younger than 21") %>
+                <%= radio_button_tag(:age, "adult") %>
+                <%= label_tag(:age_adult, "I'm over 21") %> -->
+              </p>
+    
+              <%= submit_tag("Search") %>
+            <% end %>
+          </div>
+          <div class="col-md-6">
+            <p>пользовательский выбор</p>
+          </div>
+        </div>
 
       </div>
 
