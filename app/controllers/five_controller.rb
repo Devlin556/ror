@@ -2,8 +2,13 @@ class FiveController < ApplicationController
 
   def index
     # @@form = Form.all
-    form = Form.select(:input).distinct
-    puts form
+    form = Form.last
+
+    @input = form[:input]
+    @textarea = form[:textarea]
+    @radio = form[:radio]
+    @checkbox = form[:checkbox]
+
   end
 
   def perform
@@ -11,6 +16,9 @@ class FiveController < ApplicationController
     form = Form.new
 
     form.input = params[:input_element]
+    form.textarea = params[:textarea_element]
+    form.radio = params[:age] || 0
+    # form.checkbox = params[:input_element]
 
     form.save
 
