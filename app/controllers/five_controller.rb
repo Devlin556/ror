@@ -2,6 +2,8 @@ class FiveController < ApplicationController
 
   def index
     # @@form = Form.all
+    @link = "<a href='http://localhost:3000/#{params[:lab]}/index'>Link</a>"
+
     form = Newform.last
     if(form != nil) 
       @input = form[:input]
@@ -10,6 +12,10 @@ class FiveController < ApplicationController
       @checkbox = form[:checkbox]
     end
 
+  end
+
+  def generate
+    puts params[:lab]
   end
 
   def perform

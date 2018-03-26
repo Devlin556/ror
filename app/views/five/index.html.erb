@@ -52,5 +52,32 @@
         </div>
       </div>
 
+      <div class="well well-sm">
+        <h2>1</h2>
+        <div class="row">
+          <div class="col-md-6">
+              <%= form_tag( '/five/index', :method => :get) do %>
+              <p>
+              <%= select_tag(:lab, options_for_select([['First', 'one'], ['Second', 'two' ], ['Third', 'three'], ['Fourth', 'four']])) %>
+              </p>
+  
+              <%= submit_tag("Generate") %>
+            <% end %>
+
+          </div>
+
+          <div class="col-md-6">
+            <p><%= @link.html_safe %></p>
+            <p><%= @link %></p>
+
+            <p></p>
+            <p></p>
+            <p></p> 
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
