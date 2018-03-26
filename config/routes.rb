@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'login/index'
+
   get 'five/index'
 
   get 'four/index'
