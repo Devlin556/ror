@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326074759) do
+ActiveRecord::Schema.define(version: 20180326102328) do
 
   create_table "forms", force: :cascade do |t|
+    t.string "input"
+    t.string "textarea"
+    t.string "radio"
+    t.string "checkbox"
+    t.string "string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "newforms", force: :cascade do |t|
     t.string "input"
     t.string "textarea"
     t.string "radio"
