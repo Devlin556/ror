@@ -9,7 +9,10 @@
         <div class="well well-sm">
           <%= form_tag login_index_path do %>
             <p>
-              <%= text_field_tag(:email, 'Email') %>
+              <%= select_tag(:email, options_for_select([
+                ['user1@example.com', 'user1@example.com'],
+                ['user2@example.com', 'user2@example.com'],
+                ['user3@example.com', 'user3@example.com'] ])) %>
             </p>
             <p>
               <%= text_field_tag(:plainpassword, 'Plain Password') %>

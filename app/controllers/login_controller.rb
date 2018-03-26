@@ -6,15 +6,20 @@ class LoginController < ApplicationController
     { email: 'user3@example.com', plainpassword: 'user3@example.com' },
   ]
 
-  def index
+  @selectOptions = [
+   ['user1@example.com', 'user1@example.com'],
+   ['user2@example.com', 'user2@example.com'],
+   ['user3@example.com', 'user3@example.com'],
+  ]
 
+  def index
+    puts @selectOptions
     email = params[:email]
     password = params[:plainpassword]
 
     @@users.map do |user| 
       
       if password == user[:plainpassword] and email == user[:email] 
-        # puts 'confirmed!!'
         redirect_to test_test_url
       end
 
