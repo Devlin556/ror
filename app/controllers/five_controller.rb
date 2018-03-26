@@ -2,23 +2,35 @@ class FiveController < ApplicationController
 
   def index
     # @@form = Form.all
-    form = Form.last
-
-    @input = form[:input]
-    @textarea = form[:textarea]
-    @radio = form[:radio]
-    @checkbox = form[:checkbox]
+    form = Newform.last
+    if(form != nil) 
+      @input = form[:input]
+      @textarea = form[:textarea]
+      @radio = form[:radio]
+      @checkbox = form[:checkbox]
+    end
 
   end
 
   def perform
 
-    form = Form.new
-
+    form = Newform.new
+    puts params[:pet_cat] 
+    puts params[:pet_dog] 
     form.input = params[:input_element]
     form.textarea = params[:textarea_element]
     form.radio = params[:age] || 0
-    # form.checkbox = params[:input_element]
+    form.checkbox = ''
+
+    if (params[:pet_dog] == '1') 
+      print('Success')
+      form.checkbox += 'Have a dog '
+    end
+    
+
+    if (params[:pet_cat] == '1') 
+      form.checkbox += 'Have a cat '
+    end
 
     form.save
 
