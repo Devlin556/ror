@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  input: MyString
+  textarea: MyString
+  radio: MyString
+  checkbox: MyString
+  string: MyString
+
+two:
+  input: MyString
+  textarea: MyString
+  radio: MyString
+  checkbox: MyString
+  string: MyString

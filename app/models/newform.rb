@@ -1,0 +1,2 @@
+class Newform < ApplicationRecord
+end

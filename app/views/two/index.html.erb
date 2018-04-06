@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      
-      <h1>Two#index <span class="label label-warning">В процессе</span></h1>
+      <h1>Two#index <span class="label label-success">Complete</span></h1>
       <p>Find me in app/views/two/index.html.erb</p>
       
       <div class="panel panel-default">
@@ -107,16 +106,16 @@
         </div>
 
         <div class="panel-body">
-      <table class="table table-bordered">
-        <%@employees.map.with_index do |employee, index| %>
-          <tr>
-            <%employee.each do |key, value|%>
-              <td><%= value%></td>
-            <% end%>
-          </tr>
-        <%end%>
-      </table>
-          <h3>Суммарно = <%=@summary%></h3>
+          <table class="table table-bordered">
+            <% @employees.map.with_index do |employee, index| %>
+              <tr>
+                <%employee.each do |key, value|%>
+                  <td><%= value%></td>
+                <% end%>
+              </tr>
+            <%end%>
+          </table>
+          <h4>Суммарно = <%=@summary%></h4>
         </div>
 
       </div>

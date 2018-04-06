@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12 bg-info">
+        <h1>Login#index <span class="label label-warning">In Progress</span></h1>
+        <p>Find me in app/views/login/index.html.erb</p>
+          
+        <hr/ >
+          
+        <div class="well well-sm">
+          <%= form_tag login_index_path do %>
+            <p>
+              <%= select_tag(:email, options_for_select([
+                ['user1@example.com', 'user1@example.com'],
+                ['user2@example.com', 'user2@example.com'],
+                ['user3@example.com', 'user3@example.com'] ])) %>
+            </p>
+            <p>
+              <%= text_field_tag(:plainpassword, 'Plain Password') %>
+            </p>     
+          <%= submit_tag("Login") %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+</div>
